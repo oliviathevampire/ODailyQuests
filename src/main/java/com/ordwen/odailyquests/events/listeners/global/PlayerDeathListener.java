@@ -10,6 +10,7 @@ public class PlayerDeathListener extends AbstractGlobalChecker implements Listen
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
+//        event.getEntity().getLastDamageCause().getCause()
         setPlayerQuestProgression(event.getEntity(), 1, QuestType.PLAYER_DEATH);
     }
 }

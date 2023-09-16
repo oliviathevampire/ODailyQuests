@@ -2,8 +2,10 @@ package com.ordwen.odailyquests.quests.player.progression;
 
 import com.ordwen.odailyquests.ODailyQuests;
 import com.ordwen.odailyquests.api.events.QuestCompletedEvent;
+import com.ordwen.odailyquests.api.events.QuestProgressEvent;
 import com.ordwen.odailyquests.configuration.functionalities.progression.ProgressionMessage;
 import com.ordwen.odailyquests.quests.types.AbstractQuest;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public abstract class AbstractProgressionIncreaser {
@@ -15,6 +17,9 @@ public abstract class AbstractProgressionIncreaser {
         }
 
         for (int i = 0; i < amount; i++) {
+            final QuestProgressEvent event = new QuestProgressEvent(player, progression, quest);
+            Bukkit.getPluginManager().callEvent(event);
+
             progression.increaseProgression();
         }
 

@@ -86,8 +86,8 @@ dependencies {
     compileOnly 'com.bgsoftware:WildStackerAPI:3.8.0'
 
     /* guis */
-    compileOnly 'me.clip:placeholderapi:2.10.0'
-    compileOnly 'com.gmail.filoghost.holographicdisplays:holographicdisplays-api:2.4.9'
+    compileOnly 'me.clip:placeholderapi:2.11.3'
+    compileOnly 'com.gmail.filoghost.holographicdisplays:holographicdisplays-api:3.0.3'
 
     /* custom items */
     compileOnly 'com.github.oraxen:oraxen:1.157.0'

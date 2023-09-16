@@ -1,6 +1,7 @@
 package com.ordwen.odailyquests.api.progression;
 
 import com.ordwen.odailyquests.api.events.QuestCompletedEvent;
+import com.ordwen.odailyquests.api.events.QuestProgressEvent;
 import com.ordwen.odailyquests.configuration.functionalities.TakeItems;
 import com.ordwen.odailyquests.enums.QuestsMessages;
 import com.ordwen.odailyquests.quests.player.progression.Progression;
@@ -24,6 +25,9 @@ public class ValidateItemQuest {
         int amount = 0;
 
         for (ItemStack item : quest.getRequiredItems()) {
+            final QuestProgressEvent event = new QuestProgressEvent(player, progression, quest);
+            Bukkit.getPluginManager().callEvent(event);
+
             amount += getAmount(player.getInventory(), item);
         }
 
